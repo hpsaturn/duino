@@ -34,7 +34,7 @@ The way this works is simple (in theory, not in practice). The Arduino listens f
 
 # libraries
 
-##board
+## board
 
 Right now, the board library will attempt to autodiscover the Arduino. I'm going to make it configurable, don't worry.
 
@@ -65,27 +65,27 @@ board.on('message', function(m){
 }
 ````
 
-###board.serial
+### board.serial
 
 Low-level access to the serial connection to the board
 
-###board.write(msg)
+### board.write(msg)
 
 Write a message to the board, wrapped in predefined delimiters (! and .)
 
-###board.pinMode(pin, mode)
+### board.pinMode(pin, mode)
 
 Set the mode for a pin. `mode` is either `'in'` or `'out'`
 
-###board.digitalWrite(pin, val)
+### board.digitalWrite(pin, val)
 
 Write one of the following to a pin:
 
-####board.HIGH and board.LOW
+#### board.HIGH and board.LOW
 
 Constants for use in low-level digital writes
 
-##led
+## led
 
 ````javascript
 var led = new arduino.Led({
@@ -96,19 +96,19 @@ var led = new arduino.Led({
 
 Pin will default to 13.
 
-###led.on()
+### led.on()
 
 Turn the LED on
 
-###led.off()
+### led.off()
 
 Turn the LED off
 
-###led.blink(interval)
+### led.blink(interval)
 
 Blink the LED at `interval` ms. Defaults to 1000
 
-##piezo
+## piezo
 
 ````javascript
 var led = new arduino.Piezo({
@@ -118,25 +118,25 @@ var led = new arduino.Piezo({
 ````
 Pin will default to 13.
 
-###piezo.note(note, duration)
+### piezo.note(note, duration)
 
 Play a pre-calculated note for a given duration (in milliseconds).
 
 `note` must be a string, one of `d`, `e`, `f`, `g`, `a`, `b`, or `c` (must be lowercase)
 
-###piezo.tone(tone, duration)
+### piezo.tone(tone, duration)
 
 Write a square wave to the piezo element.
 
 `tone` and `duration` must be integers. See code comments for math on `tone` generation.
 
-##button
+## button
 
-##servo
+## servo
 
-##motor
+## motor
 
-##potentiometer
+## potentiometer
 
 # protocol
 
@@ -154,18 +154,18 @@ A full message looks like this:
 
 I was drunk. It works.
 
-##command
+## command
 
 What is implemented right now:
 
 *  `00` pinMode
 *  `01` digitalWrite
 
-##pin
+## pin
 
 I haven't tested analog pins yet. Soon. Digital pins 0-13 tested.
 
-##value
+## value
 
 *  `00` low
 *  `01` high
